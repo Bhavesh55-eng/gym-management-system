@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymFlex - Transform Your Body, Transform Your Life</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>GymFlex</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#plans">Plans</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button class="btn-login" onclick="openLoginModal()">Login</button>
+                <button class="btn-signup" onclick="openSignupModal()">Sign Up</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Transform Your <span class="highlight">Body</span><br>
+                    Transform Your <span class="highlight">Life</span>
+                </h1>
+                <p class="hero-description">
+                    Embark on a Journey to Wellness. Elevate Your Fitness Experience with GymFlex! Your 
+                    Ultimate Destination for Unleashing Your Full Potential and Embracing a Vibrant, Active 
+                    Lifestyle.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="openSignupModal()">Get Started</button>
+                    <button class="btn-secondary">
+                        <i class="fas fa-play"></i> Watch Video
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>103+</h3>
+                        <p>Expert Trainers</p>
+                    </div>
+                    <div class="stat">
+                        <h3>680+</h3>
+                        <p>Member Joined</p>
+                    </div>
+                    <div class="stat">
+                        <h3>140+</h3>
+                        <p>Fitness Programs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-graphic">
+                    <img src="images/hero-fitness.jpg" alt="Fitness Model" class="hero-model">
+                    <div class="geometric-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Why Should You Choose Us?</h2>
+            <p class="section-subtitle">
+                We're dedicated to providing you with a comprehensive range of services tailored to meet your fitness needs and goals.
+            </p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Group Fitness Classes</h3>
+                    <p>We offer a variety of classes to keep you engaged and motivated. From high-intensity interval training to yoga, find the perfect class to help you reach your goals.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Personal Training</h3>
+                    <p>Our certified personal trainers will work with you one-on-one to develop a customized workout plan and provide the support and accountability you need.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3>Nutrition Counseling</h3>
+                    <p>Our registered dietitian will work with you to develop a personalized nutrition plan based on your dietary preferences, lifestyle, and fitness goals.</p>
+                </div>
+            </div>
+            
+            <div class="services-image">
+                <img src="images/gym-interior.jpg" alt="Modern Gym Interior">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Happy Clients Say About Us</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"I've been a member of GymFlex for years, and it's become like a second home to me. The sense of community here is unlike any other gym I've been to."</p>
+                    <div class="testimonial-author">
+                        <img src="images/client1.jpg" alt="John D">
+                        <div>
+                            <h4>John D</h4>
+                            <span>Member Since 2020</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The trainers are amazing and really care about helping you reach your goals. I can't imagine working out anywhere else!"</p>
+                    <div class="testimonial-author">
+                        <img src="images/client2.jpg" alt="Sarah M">
+                        <div>
+                            <h4>Sarah M</h4>
+                            <span>Member Since 2019</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"GymFlex has completely transformed my approach to fitness. The equipment is top-notch and the environment is incredibly motivating."</p>
+                    <div class="testimonial-author">
+                        <img src="images/client3.jpg" alt="Mike R">
+                        <div>
+                            <h4>Mike R</h4>
+                            <span>Member Since 2021</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-summary">
+                <div class="review-avatars">
+                    <img src="images/client1.jpg" alt="Client">
+                    <img src="images/client2.jpg" alt="Client">
+                    <img src="images/client3.jpg" alt="Client">
+                    <span class="more-reviews">+</span>
+                </div>
+                <div class="review-rating">
+                    <span class="rating-score">★ 4.9 (450 Reviews)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans Section -->
+    <section id="plans" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Choose The Best Plan For Your Needs</h2>
+            <p class="section-subtitle">
+                We offer flexible membership options to fit your lifestyle and budget. Select the plan that best suits your needs and start your fitness journey today!
+            </p>
+            
+            <div class="plan-toggle">
+                <button class="toggle-btn active" onclick="togglePlan('monthly')">Monthly</button>
+                <button class="toggle-btn" onclick="togglePlan('annually')">Annually</button>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Basic Plan -->
+                <div class="price-card">
+                    <h3>Basic Membership</h3>
+                    <div class="price">
+                        <span class="currency">₹</span>
+                        <span class="amount" id="basic-price">1999</span>
+                        <span class="period">/ Per month</span>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Access to gym facilities during regular operating hours</li>
+                        <li><i class="fas fa-check"></i> Unlimited use of cardio and strength training equipment</li>
+                        <li><i class="fas fa-check"></i> Discounted rates on group fitness classes and personal training sessions</li>
+                        <li><i class="fas fa-check"></i> Locker room access with showers and changing areas</li>
+                        <li><i class="fas fa-check"></i> Monthly membership starting at ₹XX.XX</li>
+                    </ul>
+                    <button class="btn-choose">Choose Plan</button>
+                </div>
+                
+                <!-- Premium Plan -->
+                <div class="price-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Premium Membership</h3>
+                    <div class="price">
+                        <span class="currency">₹</span>
+                        <span class="amount" id="premium-price">4199</span>
+                        <span class="period">/ Per month</span>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> All the benefits of Basic Membership</li>
+                        <li><i class="fas fa-check"></i> Unlimited access to group fitness classes including yoga, spin, HIIT, and more</li>
+                        <li><i class="fas fa-check"></i> Complimentary towel service</li>
+                        <li><i class="fas fa-check"></i> Priority booking for personal training sessions</li>
+                        <li><i class="fas fa-check"></i> Exclusive discounts on retail and nutrition products</li>
+                    </ul>
+                    <button class="btn-choose featured">Choose Plan</button>
+                </div>
+                
+                <!-- VIP Plan -->
+                <div class="price-card">
+                    <h3>VIP Membership</h3>
+                    <div class="price">
+                        <span class="currency">₹</span>
+                        <span class="amount" id="vip-price">7499</span>
+                        <span class="period">/ Per month</span>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> All the benefits of Premium Membership</li>
+                        <li><i class="fas fa-check"></i> Priority access to all specialty programs and workshops</li>
+                        <li><i class="fas fa-check"></i> Complimentary one-on-one nutrition counseling session</li>
+                        <li><i class="fas fa-check"></i> Invitations to exclusive member events and socials</li>
+                        <li><i class="fas fa-check"></i> Dedicated VIP lounge area with complimentary refreshments</li>
+                    </ul>
+                    <button class="btn-choose">Choose Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                </div>
+                <button type="submit" class="btn-submit">Login</button>
+                <p class="form-footer">
+                    Don't have an account? <a href="#" onclick="switchModal('loginModal', 'signupModal')">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Create Your Account</h2>
+            <form id="signupForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <span class="checkmark"></span>
+                        I agree to the Terms and Conditions
+                    </label>
+                </div>
+                <button type="submit" class="btn-submit">Create Account</button>
+                <p class="form-footer">
+                    Already have an account? <a href="#" onclick="switchModal('signupModal', 'loginModal')">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GymFlex</h3>
+                    <p>Transform your body and life with our comprehensive fitness programs and expert guidance.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#plans">Membership</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Personal Training</a></li>
+                        <li><a href="#">Group Classes</a></li>
+                        <li><a href="#">Nutrition Counseling</a></li>
+                        <li><a href="#">Supplement Store</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Fitness Street, Pune, India</p>
+                        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                        <p><i class="fas fa-envelope"></i> info@gymflex.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GymFlex. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/utils.js"></script>
+</body>
+</html>
