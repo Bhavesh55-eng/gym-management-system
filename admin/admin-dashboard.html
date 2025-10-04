@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - GymFlex</title>
+    <link rel="stylesheet" href="../public/css/dashboard.css">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>GymFlex Admin</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="manage-members.html"><i class="fas fa-users"></i> Manage Members</a></li>
+                    <li><a href="billing.html"><i class="fas fa-file-invoice-dollar"></i> Billing</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                    <li><a href="supplement-store.html"><i class="fas fa-store"></i> Supplement Store</a></li>
+                    <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="btn-logout" onclick="logoutUser()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navigation -->
+            <header class="top-nav">
+                <div class="nav-left">
+                    <h1>Dashboard Overview</h1>
+                </div>
+                <div class="nav-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../public/images/admin-avatar.jpg" alt="Admin">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="total-members">0</h3>
+                            <p>Total Members</p>
+                            <span class="stat-change positive">+12% this month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="monthly-revenue">₹0</h3>
+                            <p>Monthly Revenue</p>
+                            <span class="stat-change positive">+8% this month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="active-memberships">0</h3>
+                            <p>Active Memberships</p>
+                            <span class="stat-change positive">+5% this month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="expiring-soon">0</h3>
+                            <p>Expiring Soon</p>
+                            <span class="stat-change negative">-2% this month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="actions-grid">
+                        <button class="action-btn" onclick="openAddMemberModal()">
+                            <i class="fas fa-user-plus"></i>
+                            Add New Member
+                        </button>
+                        <button class="action-btn" onclick="window.location.href='billing.html'">
+                            <i class="fas fa-file-invoice"></i>
+                            Create Bill
+                        </button>
+                        <button class="action-btn" onclick="sendNotifications()">
+                            <i class="fas fa-bell"></i>
+                            Send Notifications
+                        </button>
+                        <button class="action-btn" onclick="generateReport()">
+                            <i class="fas fa-chart-line"></i>
+                            Generate Report
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recent Activity & Charts -->
+                <div class="dashboard-grid">
+                    <!-- Recent Members -->
+                    <div class="dashboard-widget">
+                        <div class="widget-header">
+                            <h3>Recent Members</h3>
+                            <a href="manage-members.html">View All</a>
+                        </div>
+                        <div class="widget-content">
+                            <div class="member-list" id="recent-members">
+                                <!-- Dynamic content will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Revenue Chart -->
+                    <div class="dashboard-widget">
+                        <div class="widget-header">
+                            <h3>Revenue Trend</h3>
+                            <select id="revenue-period">
+                                <option value="7">Last 7 days</option>
+                                <option value="30">Last 30 days</option>
+                                <option value="90">Last 90 days</option>
+                            </select>
+                        </div>
+                        <div class="widget-content">
+                            <canvas id="revenue-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Tasks -->
+                <div class="pending-tasks">
+                    <h2>Pending Tasks</h2>
+                    <div class="tasks-list">
+                        <div class="task-item">
+                            <div class="task-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="task-content">
+                                <h4>Membership Renewals Due</h4>
+                                <p>5 members have memberships expiring in the next 7 days</p>
+                            </div>
+                            <button class="task-action">Review</button>
+                        </div>
+                        
+                        <div class="task-item">
+                            <div class="task-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div class="task-content">
+                                <h4>Pending Payments</h4>
+                                <p>3 members have pending fee payments</p>
+                            </div>
+                            <button class="task-action">View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Member Modal -->
+    <div id="addMemberModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addMemberModal')">&times;</span>
+            <h2>Add New Member</h2>
+            <form id="addMemberForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="memberFirstName">First Name</label>
+                        <input type="text" id="memberFirstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="memberLastName">Last Name</label>
+                        <input type="text" id="memberLastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="memberEmail">Email</label>
+                    <input type="email" id="memberEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="memberPhone">Phone</label>
+                    <input type="tel" id="memberPhone" name="phone" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="membershipPlan">Membership Plan</label>
+                        <select id="membershipPlan" name="membershipPlan" required>
+                            <option value="">Select Plan</option>
+                            <option value="basic">Basic (₹1,999/month)</option>
+                            <option value="premium">Premium (₹4,199/month)</option>
+                            <option value="vip">VIP (₹7,499/month)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" name="startDate" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit">Add Member</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../public/js/firebase-config.js"></script>
+    <script src="../public/js/auth.js"></script>
+    <script src="../public/js/admin.js"></script>
+</body>
+</html>
